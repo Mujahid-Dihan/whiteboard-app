@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CollabBoard | Whiteboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="meeting-controls card">
+                <div id="createMeetingSection">
+                    <button id="createMeetingBtn" class="btn primary">Create Meeting</button>
+                    <div id="meetingForm" class="hidden">
+                        <input type="text" id="meetingName" placeholder="Meeting Name" class="input">
+                        <input type="password" id="meetingPassword" placeholder="Password (optional)" class="input">
+                        <button id="startMeetingBtn" class="btn primary">Start Meeting</button>
+                    </div>
+                </div>
+                <div id="joinSection">
+                    <input type="text" id="meetingId" placeholder="Meeting ID" class="input">
+                    <input type="text" id="username" placeholder="Your Name" class="input">
+                    <button id="joinMeetingBtn" class="btn secondary">Join Meeting</button>
+                </div>
+            </div>
+
+            <div class="participants card">
+                <h3>Participants</h3>
+                <ul id="participantsList"></ul>
+            </div>
+
+            <div id="hostControls" class="hidden card">
+                <h3>Host Controls</h3>
+                <div class="host-control-group">
+                    <input type="text" id="kickUsername" placeholder="Username to kick" class="input">
+                    <button id="kickUserBtn" class="btn danger">Kick User</button>
+                </div>
+                <div class="host-control-group">
+                    <button id="lockBoardBtn" class="btn secondary">Lock Board</button>
+                    <button id="unlockBoardBtn" class="btn primary hidden">Unlock Board</button>
+                </div>
+            </div>
+
+            <div class="chat card">
+                <h3>Chat</h3>
+                <div id="chatMessages"></div>
+                <div class="chat-input">
+                    <input type="text" id="chatMessage" placeholder="Type a message..." class="input">
+                    <button id="sendMessageBtn" class="btn primary">Send</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="whiteboard-container">
+            <canvas id="whiteboard"></canvas>
+            <div class="toolbar">
+                <button id="pencilTool" class="tool-btn active">✏️ Pencil</button>
+                <button id="eraserTool" class="tool-btn">🧽 Eraser</button>
+                <button id="rectTool" class="tool-btn">⬜ Rectangle</button>
+                <button id="circleTool" class="tool-btn">🔵 Circle</button>
+                <button id="lineTool" class="tool-btn">📏 Line</button>
+                <button id="textTool" class="tool-btn">🔤 Text</button>
+                <input type="color" id="colorPicker" value="#000000">
+                <input type="range" id="brushSize" min="1" max="50" value="5">
+                <button id="undoBtn" class="tool-btn">↩️ Undo</button>
+                <button id="redoBtn" class="tool-btn">↪️ Redo</button>
+                <button id="exportPdfBtn" class="tool-btn pdf">📄 Export PDF</button>
+                <button id="clearBoard" class="tool-btn danger">🗑️ Clear</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script>
+        // Make jsPDF available globally
+        window.jsPDF = window.jspdf.jsPDF;
+    </script>
+    <script src="pdf-export.js"></script>
+    <script src="whiteboard.js"></script>
+</body>
+</html>

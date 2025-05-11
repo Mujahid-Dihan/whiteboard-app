@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CollabBoard | Welcome</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="welcome-container">
+        <header class="welcome-header">
+            <div class="logo">
+                <span class="logo-icon">🖌️</span>
+                <h1>CollabBoard</h1>
+            </div>
+            <p class="tagline">Real-time collaborative whiteboarding solution</p>
+        </header>
+
+        <main class="welcome-main">
+            <div class="auth-container">
+                <div class="auth-tabs">
+                    <button class="auth-tab active" id="loginTab">Login</button>
+                    <button class="auth-tab" id="registerTab">Register</button>
+                </div>
+
+                <div class="auth-form" id="loginForm">
+                    <div class="input-group">
+                        <label for="loginEmail">Email</label>
+                        <input type="email" id="loginEmail" placeholder="your@email.com">
+                    </div>
+                    <div class="input-group">
+                        <label for="loginPassword">Password</label>
+                        <input type="password" id="loginPassword" placeholder="••••••••">
+                    </div>
+                    <button class="btn primary" id="loginBtn">Login</button>
+                    <div class="auth-divider">or</div>
+                    <button class="btn secondary" id="demoLoginBtn">Try Demo</button>
+                </div>
+
+                <div class="auth-form hidden" id="registerForm">
+                    <div class="input-group">
+                        <label for="registerName">Full Name</label>
+                        <input type="text" id="registerName" placeholder="John Doe">
+                    </div>
+                    <div class="input-group">
+                        <label for="registerEmail">Email</label>
+                        <input type="email" id="registerEmail" placeholder="your@email.com">
+                    </div>
+                    <div class="input-group">
+                        <label for="registerPassword">Password</label>
+                        <input type="password" id="registerPassword" placeholder="••••••••">
+                    </div>
+                    <div class="input-group">
+                        <label for="registerConfirm">Confirm Password</label>
+                        <input type="password" id="registerConfirm" placeholder="••••••••">
+                    </div>
+                    <button class="btn primary" id="registerBtn">Create Account</button>
+                </div>
+            </div>
+
+            <div class="features-container">
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <h3>Real-time Collaboration</h3>
+                    <p>Work simultaneously with your team on the same whiteboard</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛠️</div>
+                    <h3>Powerful Tools</h3>
+                    <p>Drawing, shapes, text, and more with undo/redo functionality</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💬</div>
+                    <h3>Integrated Chat</h3>
+                    <p>Communicate with participants without leaving the board</p>
+                </div>
+            </div>
+        </main>
+
+        <footer class="welcome-footer">
+            <p>© 2023 CollabBoard | Terms of Service | Privacy Policy</p>
+        </footer>
+    </div>
+
+    <script src="auth.js"></script>
+</body>
+</html>
